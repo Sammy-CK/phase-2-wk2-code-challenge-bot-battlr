@@ -40,7 +40,6 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
 
                 } else{
                     setArmyBots([...armyBots, bot])
-                    console.log(alreadyAddedBot)
 
                 }
 
@@ -66,17 +65,13 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
 )
     })
 
-    // console.log(botcolletion)
-
-
-
     return (
-        <React.Fragment>
-        <h1>Hello World</h1>
+            <div>
+        <h1>CHOOSE YOUR BOTS</h1>
         <ul className='botUl'>
         {shownBot}
         </ul>
-        </React.Fragment>
+        </div>
     )
 }
 

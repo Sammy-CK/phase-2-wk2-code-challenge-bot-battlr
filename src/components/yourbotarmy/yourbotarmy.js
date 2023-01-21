@@ -22,13 +22,12 @@ function Yourbotarmy({armyBots, setArmyBots}){
 
 
     return(
-        <React.Fragment>
-            
+            <div className='armyDiv'>
         <h1>Your Bot Army</h1>
         <ul className='botUl'>
                 {shownBot}
         </ul>
-        </React.Fragment>
+        </div>
     )
 }
 
