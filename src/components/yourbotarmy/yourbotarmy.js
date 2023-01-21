@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Yourbotarmy({armyBots}){
+function Yourbotarmy({armyBots, setArmyBots}){
 
 
     const shownBot = armyBots.map((bot, index) =>  {

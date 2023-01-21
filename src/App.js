@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Yourbotarmy  armyBots={armyBots} />
+      <Yourbotarmy  armyBots={armyBots} setArmyBots={setArmyBots} />
       <Botcolletion setArmyBots={setArmyBots} armyBots={armyBots} botcolletion={botcolletion} setBotcolletion={setBotcolletion}/>
     </div>
   );

@@ -27,9 +27,20 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
         return(
             <li className="botLi" key={'bot' + index} onClick={() => {
                 
-                const allNew = [...armyBots, bot]
 
-                setArmyBots(allNew)
+                const alreadyAddedBot = armyBots.includes(bot)
+
+                
+
+                if (alreadyAddedBot){
+                    setArmyBots([...armyBots])
+                    console.log(alreadyAddedBot)
+
+                } else{
+                    setArmyBots([...armyBots, bot])
+                    console.log(alreadyAddedBot)
+
+                }
 
             }}>
                 <img src={bot.avatar_url} style={{width: "70%"}} alt='' />
@@ -42,7 +53,7 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
         )
     })
 
-    console.log(botcolletion)
+    // console.log(botcolletion)
 
 
 
