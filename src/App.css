@@ -1,3 +1,13 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: small;
+}
+
 .App {
   text-align: center;
 }
@@ -32,7 +42,35 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.botUl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 97%;
+  justify-content: space-around;
+}
+
+
+.botLi {
+  width: 21%;
+  list-style: none;
+  border: thin solid grey;
+  margin: 7px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 8px #888888;
+  line-height: 1.5em;
+  word-break: break-all;
+  background-color: lightgray;
+
+}
+
+span{
+  padding-right: 5px;
 }
