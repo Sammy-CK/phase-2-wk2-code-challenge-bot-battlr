@@ -25,7 +25,9 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
 
     const shownBot = botcolletion.map((bot, index) =>  {
         return(
-            <li className="botLi" key={'bot' + index} onClick={() => {
+            
+            <li className="botLi" key={'bot' + index} >
+                <div onClick={() => {
                 
 
                 const alreadyAddedBot = armyBots.includes(bot)
@@ -44,13 +46,24 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
 
             }}>
                 <img src={bot.avatar_url} style={{width: "70%"}} alt='' />
-                <div style={{padding : "15px 0px",borderTop: "thin solid grey"}}>
+                <div style={{padding : "15px 0px 3px 0px",borderTop: "thin solid grey"}}>
                 <h3 style={{textAlign:"left", paddingLeft:"10px"}}>{bot.name}</h3>
                 <p style={{fontSize : "80%"}}>{bot.catchphrase}</p>
                 <div><span><b>Health:</b> {bot.health}</span> <span><b>Amour:</b> {bot.armor}</span> <span><b>Damage:</b> {bot.damage}</span></div>
                 </div>
+
+                </div>
+                <button className='deleteBtn' onClick={() => {
+
+                    setArmyBots(armyBots.filter(armBott => armBott.id !== bot.id));
+                    setBotcolletion(botcolletion.filter(bott => bott.id !== bot.id));
+                    
+                    }}>X</button>
+
             </li>
-        )
+
+
+)
     })
 
     // console.log(botcolletion)

@@ -74,3 +74,13 @@ body{
 span{
   padding-right: 5px;
 }
+
+.deleteBtn{
+  margin: 2px;
+  background-color: red;
+   color: white; 
+   border-radius: 50px ;
+  padding: 5px;
+  width: 18%;
+  /* font-size: 1px; */
+}

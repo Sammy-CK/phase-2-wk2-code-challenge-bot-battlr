@@ -7,9 +7,8 @@ function Yourbotarmy({armyBots, setArmyBots}){
     const shownBot = armyBots.map((bot, index) =>  {
         return(
             <li className="botLi" key={'bott' + index} onClick={(e) => {
-                const allNew = [...armyBots, bot]
-
-
+                const allNew = armyBots.filter(armyBot => armyBot.id !== bot.id)
+                setArmyBots([...allNew])
             }}>
                 <img src={bot.avatar_url} style={{width: "70%"}} alt='' />
                 <div style={{padding : "15px 0px",borderTop: "thin solid grey"}}>
