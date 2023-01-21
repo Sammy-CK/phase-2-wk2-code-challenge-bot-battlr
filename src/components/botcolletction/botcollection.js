@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import '../../App.css';
 
 
-function Botcolletion(){
-    const [botcolletion, setBotcolletion] = useState([]);
+function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
+
 
     useEffect(() => {
      
@@ -25,7 +25,13 @@ function Botcolletion(){
 
     const shownBot = botcolletion.map((bot, index) =>  {
         return(
-            <li className="botLi" key={'bot' + index}>
+            <li className="botLi" key={'bot' + index} onClick={() => {
+                
+                const allNew = [...armyBots, bot]
+
+                setArmyBots(allNew)
+
+            }}>
                 <img src={bot.avatar_url} style={{width: "70%"}} alt='' />
                 <div style={{padding : "15px 0px",borderTop: "thin solid grey"}}>
                 <h3 style={{textAlign:"left", paddingLeft:"10px"}}>{bot.name}</h3>
