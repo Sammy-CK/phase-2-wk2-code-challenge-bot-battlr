@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import '../../App.css';
+import {Link, redirect} from 'react-router-dom';
 
 
-function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
+function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion, setBotspecsShown }){
 
 
     useEffect(() => {
@@ -27,21 +28,9 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
         return(
             
             <li className="botLi" key={'bot' + index} >
-                <div onClick={() => {
+                <Link to='/botspecs' className='black' onClick={() => {
                 
-
-                const alreadyAddedBot = armyBots.includes(bot)
-
-                
-
-                if (alreadyAddedBot){
-                    setArmyBots([...armyBots])
-                    console.log(alreadyAddedBot)
-
-                } else{
-                    setArmyBots([...armyBots, bot])
-
-                }
+                setBotspecsShown(bot)
 
             }}>
                 <img src={bot.avatar_url} style={{width: "70%"}} alt='' />
@@ -51,9 +40,9 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion }){
                 <div><span><b>Health:</b> {bot.health}</span> <span><b>Amour:</b> {bot.armor}</span> <span><b>Damage:</b> {bot.damage}</span></div>
                 </div>
 
-                </div>
+                </Link>
                 <button className='deleteBtn' onClick={() => {
-
+                    
                     setArmyBots(armyBots.filter(armBott => armBott.id !== bot.id));
                     setBotcolletion(botcolletion.filter(bott => bott.id !== bot.id));
                     

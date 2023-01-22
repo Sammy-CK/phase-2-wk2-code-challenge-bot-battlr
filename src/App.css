@@ -69,6 +69,7 @@ body {
   line-height: 1.5em;
   word-break: break-all;
   background-color: lightgray;
+  color: black;
 
 }
 
@@ -103,3 +104,4 @@ header {
   margin: 10px auto 40px auto;
   border-radius: 10px;
 }
+
