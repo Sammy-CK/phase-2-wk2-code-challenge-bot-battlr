@@ -23,7 +23,7 @@ The goal of this application is to:
 
 
 ## Screenshot
-<img src="./public/Screenshot from 2023-01-23 11-48-28.png" width="" height="" />
+<img src="./public/Screenshot from 2023-01-23 11-48-28.png" alt="screenshot" />
 
 
 ## Getting Started

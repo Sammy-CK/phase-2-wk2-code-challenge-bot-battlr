@@ -8,6 +8,7 @@ function BotSpecs({ botSpecsShown, armyBots, setArmyBots }) {
         src={botSpecsShown.avatar_url}
         width="350px"
         height="400px"
+        alt="bot"
         style={{ marginLeft: "40px" }}
       />
       <div className="specContent">

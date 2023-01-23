@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../../App.css";
-import { NavLink, redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Botcolletion({
   setArmyBots,
