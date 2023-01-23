@@ -31,7 +31,7 @@ The goal of this application is to:
 ## Livelink
 Use netlify  to check out website and perform operations from there.The link is:
 
-                https://resonant-creponne-c124fd.netlify.app/
+                https://darling-pudding-34c803.netlify.app/
 
 
 ## Set Up Instructions
