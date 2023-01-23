@@ -1,26 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import '../../App.css';
-import {Link, redirect} from 'react-router-dom';
+import {NavLink, redirect} from 'react-router-dom';
 
 
 function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion, setBotspecsShown }){
 
 
-    useEffect(() => {
-     
-        fetch('https://sammy-ck.github.io/db.json')
-        .then(resp => resp.json())
-        .then(data => {
 
-            setBotcolletion(data.bots)
-        
 
-        
-        
-        
-        })
-
-    }, [])
 
 
 
@@ -28,7 +15,7 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion, se
         return(
             
             <li className="botLi" key={'bot' + index} >
-                <Link to='/botspecs' className='black' onClick={() => {
+                <NavLink to='/botspecs' className="LinkCollection" onClick={() => {
                 
                 setBotspecsShown(bot)
 
@@ -40,7 +27,7 @@ function Botcolletion({ setArmyBots, armyBots, botcolletion, setBotcolletion, se
                 <div><span><b>Health:</b> {bot.health}</span> <span><b>Amour:</b> {bot.armor}</span> <span><b>Damage:</b> {bot.damage}</span></div>
                 </div>
 
-                </Link>
+                </NavLink>
                 <button className='deleteBtn' onClick={() => {
                     
                     setArmyBots(armyBots.filter(armBott => armBott.id !== bot.id));

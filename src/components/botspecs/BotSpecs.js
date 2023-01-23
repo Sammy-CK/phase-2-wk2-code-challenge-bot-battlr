@@ -1,43 +1,47 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link as NavLink} from 'react-router-dom'
 
 
 
-function BotSpecs({botSpecsShown, armyBots, setArmyBots, setBotspecsShown}){
-    
-    
-
-        console.log("Army:",armyBots)
-        console.log("newBot",botSpecsShown)
-
-    
+function BotSpecs({botSpecsShown, armyBots, setArmyBots, setBotcolletion, botcolletion}){
 
 
 return(
-    <div>
+    <div className="specDiv">
 
 
-        <img src={botSpecsShown.avatar_url}/>
-        <div>
-            <h3>{botSpecsShown.name}</h3>
-            <p>CATCHPHRASE: {botSpecsShown.catchphrase}</p>
-            <p>CLASS: {botSpecsShown.bot_class}</p>
+        <img src={botSpecsShown.avatar_url} width="350px" height="400px" style={{marginLeft: "40px"}}/>
+        <div className='specContent'>
+            <h3><b>{botSpecsShown.name}</b></h3>
+            <p><b>CATCHPHRASE:</b> {botSpecsShown.catchphrase}</p>
+            <p><b>CLASS:</b> {botSpecsShown.bot_class}</p>
             <div><span><b>Health:</b> {botSpecsShown.health}</span> <span><b>Amour:</b> {botSpecsShown.armor}</span> <span><b>Damage:</b> {botSpecsShown.damage}</span></div>
         </div>
 
 
+        <div className='btnSpec'>
+  <button>  <NavLink className="navSpec btnSpec" to='/'>Go Back</NavLink></button><br></br>
+<br/>
+<button onClick={() => {
 
-  <button>  <Link to='/'>Go Back</Link></button><br></br>
+const alreadyInBot = armyBots.includes(botSpecsShown)
 
 
-    <Link to='/' onClick={() => {
+    if(alreadyInBot){
+        setArmyBots([...armyBots])
+    }else{
+        setArmyBots([...armyBots, botSpecsShown])
 
-        setArmyBots( [...(armyBots.filter(armyBott => armyBott.id !== botSpecsShown.id)), botSpecsShown])  
-        console.log(armyBots)      
-
+        const newBotes = botcolletion.filter(bottc => bottc.id !== botSpecsShown.id)
+        setBotcolletion([...newBotes])
+        console.log(botSpecsShown)
     }
-    }
-    >Enlist</Link>
+
+}
+}>
+    <NavLink to='/' className='navSpec btnSpec'>Enlist</NavLink>
+</button>
+</div>
 
             </div>
 )

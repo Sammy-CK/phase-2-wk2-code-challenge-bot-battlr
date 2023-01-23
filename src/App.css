@@ -105,3 +105,44 @@ header {
   border-radius: 10px;
 }
 
+.LinkCollection{
+  color: black;
+  text-decoration: none;
+}
+
+.specDiv{
+  width : 70%;
+  background-color: #E1D9D1;
+  border: thin solid gray;
+  margin: 10px auto 40px auto;
+  height: 500px;
+  border-radius: 10px;
+  padding: 10px;  
+  display : flex;
+  align-items: center;
+}
+
+.specContent{
+  text-align: start;
+  line-height: 2em;
+}
+
+.btnSpec > button{
+  margin: 10px 22px 10px 10px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  width: 120px;
+}
+
+.navSpec{
+  width: 200px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 20px;
+
+
+}

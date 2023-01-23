@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Botcolletion from './components/botcolletction/botcollection';
 import Yourbotarmy from './components/yourbotarmy/yourbotarmy';
@@ -13,6 +13,21 @@ function App() {
     const [armyBots, setArmyBots] = useState([])
     const [botSpecsShown, setBotspecsShown] = useState({})
 
+
+    useEffect(() => {
+     
+      fetch('https://sammy-ck.github.io/db.json')
+      .then(resp => resp.json())
+      .then(data => {
+
+          setBotcolletion(data.bots)
+      
+      })
+
+  }, [])
+
+
+
   return (
     <div className="App">
       
@@ -21,7 +36,7 @@ function App() {
         <Routes>
           
           <Route exact path='/' element={<Botcolletion setBotspecsShown={setBotspecsShown} setArmyBots={setArmyBots} armyBots={armyBots} botcolletion={botcolletion} setBotcolletion={setBotcolletion}/>}/>
-          <Route exact path='/botspecs' element={<BotSpecs botSpecsShown={botSpecsShown} setArmyBots={setArmyBots} armyBots={armyBots}/>}/>
+          <Route exact path='/botspecs' element={<BotSpecs setBotcolletion={setBotcolletion} botcolletion={botcolletion} botSpecsShown={botSpecsShown} setArmyBots={setArmyBots} armyBots={armyBots}/>}/>
       </Routes>
       
     </div>
