@@ -105,29 +105,29 @@ header {
   border-radius: 10px;
 }
 
-.LinkCollection{
+.LinkCollection {
   color: black;
   text-decoration: none;
 }
 
-.specDiv{
-  width : 70%;
+.specDiv {
+  width: 70%;
   background-color: #E1D9D1;
   border: thin solid gray;
   margin: 10px auto 40px auto;
   height: 500px;
   border-radius: 10px;
-  padding: 10px;  
-  display : flex;
+  padding: 10px;
+  display: flex;
   align-items: center;
 }
 
-.specContent{
+.specContent {
   text-align: start;
   line-height: 2em;
 }
 
-.btnSpec > button{
+.btnSpec>button {
   margin: 10px 22px 10px 10px;
   padding: 6px;
   border-radius: 5px;
@@ -137,7 +137,7 @@ header {
   width: 120px;
 }
 
-.navSpec{
+.navSpec {
   width: 200px;
   color: white;
   text-decoration: none;
